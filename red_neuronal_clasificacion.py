@@ -104,3 +104,18 @@ probabilidades = mlp.predict_proba(nueva_flor_scaled)
 print(f"Medidas de la flor: {nueva_flor[0]}")
 print(f"Especie predicha: {iris.target_names[prediccion[0]]}")
 print(f"Probabilidades por clase: {probabilidades[0]}")
+
+#Ver que aprendió la red neuronal, mostrando los pesos y sesgos de cada capa##
+# Ver la matriz de pesos de Entrada -> Capa Oculta (4x10)
+print("--- Pesos Capa de Entrada a Capa Oculta W(1) ---")
+print(mlp.coefs_[0].shape)  # Salida: (4, 10)
+print(mlp.coefs_[0])
+
+# Ver los sesgos de la Capa Oculta (10)
+print("\n--- Sesgos Capa Oculta b(1) ---")
+print(mlp.intercepts_[0])
+
+# Ver la matriz de pesos de Capa Oculta -> Salida (10x3)
+print("\n--- Pesos Capa Oculta a Salida W(2) ---")
+print(mlp.coefs_[1].shape)  # Salida: (10, 3)
+print(mlp.coefs_[1])
